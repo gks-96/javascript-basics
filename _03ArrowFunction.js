@@ -12,3 +12,7 @@ const summarizeUser =  (username,userAge,userHasHobby) =>{
 }
 
 console.log(summarizeUser(name,age,hasHobbies));
+
+const addRandom = () => 1 +2
+
+console.log("add random " +addRandom());
