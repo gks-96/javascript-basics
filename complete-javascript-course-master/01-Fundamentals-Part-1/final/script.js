@@ -58,6 +58,9 @@ let age = 30;
 age = 31;
 
 const birthYear = 1991;
+// for constant, we cannot change their value
+// if we do : we get error : TypeErro: Assignment to constant variable
+// constant must be initialized when declared 
 // birthYear = 1990;
 // const job;
 
@@ -242,10 +245,10 @@ console.log(typeof NaN);
 
 console.log(String(23), 23);
 
-// type coercion
+// type coercion - happens implicitly conversion from one data type to another data type
 console.log('I am ' + 23 + ' years old');
 console.log('23' - '10' - 3);
-console.log('23' / '2');
+console.log('23' / '2'); // if divisor operator, then both string are implicitly converted to number
 
 let n = '1' + 1; // '11'
 n = n - 1;
@@ -424,7 +427,7 @@ if (23 > 10) {
 
 const me = 'Jonas';
 console.log(`I'm ${2037 - 1991} years old ${me}`);
-
+what we keep inside the $ {} - it is the expression
 ////////////////////////////////////
 // The Conditional (Ternary) Operator
 const age = 23;
