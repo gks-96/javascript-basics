@@ -15,6 +15,7 @@ if (hasDriversLicense) console.log('I can drive :D');
 
 ///////////////////////////////////////
 // Functions
+// to define a function - we use the keyword - function
 function logger() {
   console.log('My name is Jonas');
 }
@@ -24,6 +25,8 @@ logger();
 logger();
 logger();
 
+
+// defining functions with parameters
 function fruitProcessor(apples, oranges) {
   const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
   return juice;
@@ -209,20 +212,22 @@ console.log(ages);
 // Basic Array Operations (Methods)
 const friends = ['Michael', 'Steven', 'Peter'];
 
-// Add elements
+// Add elements to the end
 const newLength = friends.push('Jay');
 console.log(friends);
 console.log(newLength);
 
-friends.unshift('John');
+friends.unshift('John'); - add elements to the start
 console.log(friends);
 
 // Remove elements
+// pop removes the last element from the array
 friends.pop(); // Last
 const popped = friends.pop();
 console.log(popped);
 console.log(friends);
 
+// shift removes teh first element from the array
 friends.shift(); // First
 console.log(friends);
 
@@ -279,7 +284,8 @@ const jonasArray = [
   'teacher',
   ['Michael', 'Peter', 'Steven']
 ];
-
+// if we want to access the elements based on their property, we cannot do it using arrays
+// therefore , we are using
 const jonas = {
   firstName: 'Jonas',
   lastName: 'Schmedtmann',
