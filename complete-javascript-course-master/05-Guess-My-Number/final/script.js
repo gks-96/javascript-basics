@@ -1,6 +1,9 @@
 'use strict';
 
 /*
+
+querySelector - to select the first element in the dom with the specified class name
+
 console.log(document.querySelector('.message').textContent);
 document.querySelector('.message').textContent = '🎉 Correct Number!';
 
