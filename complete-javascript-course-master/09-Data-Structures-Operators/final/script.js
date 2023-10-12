@@ -26,6 +26,13 @@ const restaurant = {
   // ES6 enhanced object literals
   openingHours,
 
+
+
+  // order: function(starterIndex, mainIndex) {
+  //   return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  // },
+
+  // updated to lower syntax now: returning an array which has 2 values
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
@@ -765,6 +772,7 @@ const [pizza, , risotto, ...otherFood] = [
 console.log(pizza, risotto, otherFood);
 
 // Objects
+- rest element must be the last element in the array
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(weekdays);
 
