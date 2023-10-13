@@ -123,6 +123,7 @@ const lufthansa = {
   iataCode: 'LH',
   bookings: [],
   // book: function() {}
+  // new syntax of having objects
   book(flightNum, name) {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
@@ -160,7 +161,7 @@ const swiss = {
 
 book.call(swiss, 583, 'Mary Cooper');
 
-// Apply method
+// Apply method - it takes teh second argument as an array
 const flightData = [583, 'George Cooper'];
 book.apply(swiss, flightData);
 console.log(swiss);
@@ -171,12 +172,15 @@ book.call(swiss, ...flightData);
 // The bind Method
 // book.call(eurowings, 23, 'Sarah Williams');
 
+// if we do this , then we do not need to speicfy the "this" keyword instance
+// and then we can use this funciton to call teh method
 const bookEW = book.bind(eurowings);
 const bookLH = book.bind(lufthansa);
 const bookLX = book.bind(swiss);
 
 bookEW(23, 'Steven Williams');
 
+// if we add more arguments, then that will compensate for the one that are present in the ( bind function )
 const bookEW23 = book.bind(eurowings, 23);
 bookEW23('Jonas Schmedtmann');
 bookEW23('Martha Cooper');
@@ -191,6 +195,7 @@ lufthansa.buyPlane = function () {
 };
 // lufthansa.buyPlane();
 
+// important to do the binding in the eventListener, so that we know what the function might be expecting
 document
   .querySelector('.buy')
   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
@@ -297,12 +302,13 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
 
 ///////////////////////////////////////
 // Immediately Invoked Function Expressions (IIFE)
+
 const runOnce = function () {
   console.log('This will never run again');
 };
 runOnce();
 
-// IIFE
+// IIFE  - function expression and invoke it using it ()
 (function () {
   console.log('This will never run again');
   const isPrivate = 23;
@@ -310,7 +316,7 @@ runOnce();
 
 // console.log(isPrivate);
 
-(() => console.log('This will ALSO never run again'))();
+(() => console.log('This will ALSO never run again'))();   // running it only once
 
 {
   const isPrivate = 23;
